@@ -662,6 +662,15 @@ def main():
         if not debug_mode:
             chrome_options.add_argument('--headless=new')
 
+        # ── Memory batch 1: pure UI/process flags, no networking or media impact ──
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--disable-software-rasterizer')
+        chrome_options.add_argument('--no-first-run')
+        chrome_options.add_argument('--no-default-browser-check')
+        chrome_options.add_argument('--disable-default-apps')
+        chrome_options.add_argument('--metrics-recording-only')
+        chrome_options.add_argument('--safebrowsing-disable-auto-update')
+
         # If proxies are enabled and available, assign one per account (round-robin)
         if use_proxy.lower() == 'y' and proxies:
             # pick proxy by account index
