@@ -1,4 +1,6 @@
 selenium
+selenium-stealth
+setuptools
 requests
 keyboard
 colorama
